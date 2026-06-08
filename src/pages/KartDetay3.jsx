@@ -1,49 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../assets/css/custom-bank.css';
 import '../assets/css/custom-maps.css';
+import KartDetayIcerik from '../components/KartDetayIcerik';
+import KartDetayHarita from '../components/KartDetayHarita';
 
 function KartDetay3() {
-  useEffect(() => {
-    const L = window.L;
-    if (!L) return;
-
-    if (window.leafletMapInstance) {
-      window.leafletMapInstance.remove();
-    }
-
-    // Haritayı Cumhuriyet Atık Noktası koordinatlarında (41.335, 36.265) başlatıyoruz.
-    const mapInstance = L.map("map", {
-      center: [41.335, 36.265],
-      zoom: 16,
-      zoomControl: false,
-    });
-
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-      attribution: "&copy; OpenStreetMap &copy; CARTO",
-    }).addTo(mapInstance);
-
-    const customIcon = L.divIcon({
-      className: "custom-map-pin",
-      html: '<div class="map-pulse-pin"></div>',
-      iconSize: [12, 12],
-      iconAnchor: [6, 6],
-    });
-
-    L.marker([41.335, 36.265], { icon: customIcon })
-      .addTo(mapInstance)
-      .bindPopup(
-        '<b style="color:#000;">Atakum Sahil Geri Dönüşüm</b><br><span style="color:#666;">Organik & Gıda Atıkları</span>'
-      );
-
-    window.leafletMapInstance = mapInstance;
-
-    return () => {
-      if (window.leafletMapInstance) {
-        window.leafletMapInstance.remove();
-        window.leafletMapInstance = null;
-      }
-    };
-  }, []);
+  const coordinates = [41.335, 36.265];
 
   return (
     <main className="pageMainContent" id="atikAramaContainer">
@@ -59,20 +21,20 @@ function KartDetay3() {
                 alır.
               </p>
             </div>
+            <KartDetayIcerik 
+              title="Atakum Sahil Geri Dönüşüm"
+              tags="Plastik • Cam"
+              address="Atakum Sahil Yolu, Samsun"
+              hours="08:00 - 18:00"
+              parking="Var"
+              accessibility="Var"
+            />
+            <KartDetayHarita 
+              center={coordinates}
+              title="Atakum Sahil Geri Dönüşüm"
+              subtitle="Organik & Gıda Atıkları"
+            />
 
-            <div className="bankBottom" style={{ opacity: 1, transform: 'none', maxHeight: 'none', overflow: 'visible' }}>
-              <div className="aramaSonuclariKismi">
-                <div className="result-card">
-                  <span className="res-points">Plastik • Cam</span>
-                  <h4>Atakum Sahil Geri Dönüşüm</h4>
-                  <p>Adres: Atakum Sahil Yolu, Samsun</p>
-                  <p>Saat: 08:00 - 18:00</p>
-                  <p>Otopark: Var</p>
-                  <p>Engelli Rampası: Var</p>
-                  <div id="map" style={{ width: '100%', height: '300px' }} className="m-3"></div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
