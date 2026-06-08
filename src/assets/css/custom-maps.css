@@ -1,0 +1,283 @@
+.mapsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.atikEklePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.atikEklePanel h2 {
+  margin-bottom: 0;
+}
+
+.atikEklePanel .panelLead,
+.atikEklePanel .formLead {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.atikEklePanel #map {
+  max-width: 100%;
+  width: 100%;
+  height: 380px;
+}
+
+.mapHelperRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+}
+
+.mapHelperChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.atikEkleFormCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  background: #000 !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+
+.atikEkleFormCard h3 {
+  font-family: var(--font-title);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+.atikEkleForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ecoField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ecoField label {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ecoInput,
+.ecoSelect,
+.ecoTextarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #000 !important;
+  color: var(--text-primary);
+  padding: 14px 16px;
+  font-size: 15px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.ecoInput::placeholder,
+.ecoTextarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.ecoInput:focus,
+.ecoSelect:focus,
+.ecoTextarea:focus {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.08);
+  background: #000 !important;
+}
+
+.ecoSelect option {
+  color: #000000;
+}
+
+.ecoTextarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+.kaydetBtn {
+  border: none;
+  border-radius: 999px;
+  background: var(--neon-green);
+  color: #000000;
+  padding: 14px 20px;
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.kaydetBtn:hover,
+.kaydetBtn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(255, 255, 255, 0.24);
+  background: #ffffff;
+}
+
+.formNote {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+#map {
+  width: 100%;
+  max-width: 600px;
+  height: 380px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  z-index: 10;
+  background: #000;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(0, 0, 0, 0.9) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px !important;
+  font-family: var(--font-body);
+}
+
+.leaflet-popup-tip {
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.custom-map-pin {
+  background: transparent !important;
+  border: none !important;
+}
+
+.map-pulse-pin {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ffffff;
+}
+
+.map-pulse-pin::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse-map 1.8s infinite ease-out;
+  opacity: 0;
+}
+
+@keyframes pulse-map {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.atikLokasyonListesi {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.atikLokasyonlari {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.atikLokasyonlari:last-child {
+  border-bottom: none;
+}
+
+.loc-bullet {
+  font-size: 20px;
+}
+
+.atikLokasyonBilgisi h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.atikLokasyonBilgisi p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.mapsVideoBg {
+  left: 40%;
+  top: 55%;
+}
