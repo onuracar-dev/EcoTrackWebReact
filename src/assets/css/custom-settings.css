@@ -1,0 +1,75 @@
+.settingsPanel {
+  max-width: 500px;
+  width: 100%;
+}
+
+.ayarlarListesi {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ayarlarItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ayarlarItem:hover {
+  background: rgba(255, 255, 255, 0.03);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+}
+
+.ayarlarItem label {
+  font-size: 15px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggleBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggleBtn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--neon-green);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.settingsSaveBtn {
+  background: var(--neon-green);
+  color: #000;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.settingsSaveBtn:hover {
+  transform: translateY(-2px);
+}
+
+.settingsVideoBg {
+  left: 38%;
+}
